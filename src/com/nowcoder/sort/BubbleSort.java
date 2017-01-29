@@ -1,4 +1,4 @@
-/* ц╟ещеепР */
+/* Е├▓ФЁ║Ф▌▓Е╨▐ */
 package com.nowcoder.sort;
 
 public class BubbleSort {

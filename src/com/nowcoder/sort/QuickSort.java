@@ -1,12 +1,12 @@
-/* ¿ìËÙÅÅĞò */
+/* å¿«é€Ÿæ’åº */
 package com.nowcoder.sort;
 
 public class QuickSort {
 	public int sort(int[] A, int low, int high) {
 		
-		int key = A[low]; //»ù×¼Öµ
-		int i = low; //×óÖ¸Õë
-		int j = high; //ÓÒÖ¸Õë
+		int key = A[low]; //åŸºå‡†å€¼
+		int i = low; //å·¦æŒ‡é’ˆ
+		int j = high; //å³æŒ‡é’ˆ
 		
 		if (low < high) {
 			while (i < j) {
@@ -20,7 +20,7 @@ public class QuickSort {
 				A[j] = A[i];
 			}	
 			
-			A[i] = key; //·ÅÈëÖĞ¼äÖµ
+			A[i] = key; 
 		}
 		
 		return i;
@@ -30,8 +30,8 @@ public class QuickSort {
 		if (low < high) {
 			int mid = sort(A, low, high);
 			
-			quick(A, low, mid - 1); //µİ¹é×óĞòÁĞ
-			quick(A, mid + 1, high); //µİ¹éÓÒĞòÁĞ
+			quick(A, low, mid - 1); 
+			quick(A, mid + 1, high);
 		}
 		
 		return A;

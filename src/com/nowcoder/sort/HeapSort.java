@@ -1,8 +1,8 @@
-/* ¶ÑÅÅĞò */
+/* å †æ’åº */
 package com.nowcoder.sort;
 
 public class HeapSort {
-	//½¨¶Ñ
+	//å»ºå †
 	public int[] buildMaxHap(int[] A) {
 		for (int i = A.length / 2; i >= 0; i--) {
 			adjustHeap(A, i, A.length);
@@ -11,35 +11,36 @@ public class HeapSort {
 		return A;
 	}
 	
-	//¶ÑµÄµ÷Õû
+	//å †çš„è°ƒæ•´ï¼šå°†å…ƒç´ A[k]è‡ªä¸‹å¾€ä¸Šé€æ­¥è°ƒæ•´æ ‘å½¢ç»“æ„
 	public void adjustHeap(int[] A, int k, int n) {
 		int temp = A[k];
 		
 		for (int i = 2 * k + 1; i < n; i = 2 * i + 1) {
 			if (i != n - 1 && A[i] < A[i + 1]) {
-				i++; //ÓÒ  -> ×ó£¬È¡ÓÒ
+				i++; //å³ -> å·¦ï¼Œå–å³
 			}
 			if (temp > A[i]) {
-				break; //¸ù  -> ÓÒ£¬ ½áÊø
+				break; //æ ¹ -> å³ï¼Œç»“æŸ
 			} else {
-				A[k] = A[i]; //¸Ä±ä¸ùÖµ£¬²¢¼ÌĞøÏòÏÂµ÷Õû
-				k = i;
+				A[k] = A[i]; //æ”¹å˜æ ¹æ¤ï¼Œå¹¶ç»§ç»­å‘ä¸‹è°ƒæ•´
+				k = i; //ä¿®æ”¹kå€¼ï¼Œä»¥ä¾¿ç»§ç»­å‘ä¸‹è°ƒæ•´
 			}
 		}
 		
-		A[k] = temp;
+		A[k] = temp; //è¢«è°ƒæ•´çš„ç»“ç‚¹çš„å€¼æ”¾å…¥æœ€ç»ˆä½ç½®
 	}
 	
 	public int[] heapSort(int[] A, int n) {
-		//½¨Á¢´ó¸ù¶Ñ
+		//å»ºç«‹å¤§æ ¹å †
 		A = buildMaxHap(A);
 		
-		//µ÷ÕûÅÅĞò
+		//è°ƒæ•´æ’åº
 		for (int i = n - 1; i > 0; i--) {
+			//å †é¡¶å’Œå †åº•å…ƒç´ äº¤æ¢
 			int temp = A[0];
 			A[0] = A[i];
 			A[i] = temp;
-			adjustHeap(A, 0, i);
+			adjustHeap(A, 0, i); //å°†å‰©ä½™çš„å…ƒç´ æ•´ç†æˆå †
 		}
 		
 		return A;

@@ -1,4 +1,4 @@
-/* ²åÈëÅÅĞò */
+/* æ’å…¥æ’åº */
 package com.nowcoder.sort;
 
 public class InsertionSort {
