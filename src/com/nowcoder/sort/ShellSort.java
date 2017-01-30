@@ -9,7 +9,7 @@ public class ShellSort {
 		while (gap >= 1) {
 			//把距离为gap的元素编为一个组，扫描所有组
 			for (int i = gap; i < n; i++) {
-				int j = 0;
+				int j;
 				int temp = A[i];
 				
 				//对距离为gap的元素组进行排序
