@@ -2,7 +2,7 @@
 package com.nowcoder.sort;
 
 public class HeapSort {	
-	//堆的调整
+	//堆的调整，大根堆
 	public void heapAdjust(int[] A, int parent, int n) {
 		int temp = A[parent]; //保存当前父结点
 		int child = 2 * parent + 1; //获得左孩子

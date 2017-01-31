@@ -41,8 +41,8 @@ public class MergeSort {
 		
 		int mid = (low + high) / 2;
 		
-		pass(A, low, mid); //����������
-		pass(A, mid + 1, high); //����������
+		pass(A, low, mid); 
+		pass(A, mid + 1, high); 
 		
 		merge(A, low, high);
 	}
