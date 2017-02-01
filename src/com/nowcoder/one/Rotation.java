@@ -1,13 +1,8 @@
 package com.nowcoder.one;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-
 public class Rotation {
 	
-	public boolean chkRotation(String A, int lena, String B, int lenb) {
-        // write code here
-		
+	public boolean chkRotation(String A, int lena, String B, int lenb) {	
 		if(lena!=lenb){
 			return false;
 	    }
