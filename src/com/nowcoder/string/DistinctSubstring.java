@@ -12,8 +12,8 @@ public class DistinctSubstring {
 			map[i] = -1;
 		}
 		
-		int len = 0; //子串长度
-		int pre = -1; //上次出现的位置
+		int len = 0; //
+		int pre = -1; //每个字符上次出现的位置
 		int cur = 0; //当前字符为止的最长无重复字符串的长度
 		
 		for (int i = 0; i < n; i++) {
