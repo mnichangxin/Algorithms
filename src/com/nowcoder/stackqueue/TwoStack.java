@@ -1,5 +1,5 @@
 /* 双栈队列 */
-package stackqueue;
+package com.nowcoder.stackqueue;
 
 import java.util.Stack;
 

@@ -1,5 +1,5 @@
 /* 实现栈的数据结构 */
-package stackqueue;
+package com.nowcoder.stackqueue;
 
 import java.util.Stack;
 
