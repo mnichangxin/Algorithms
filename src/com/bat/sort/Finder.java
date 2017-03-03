@@ -6,7 +6,7 @@ public class Finder {
 		int i = n - 1;
 		int j = 0;
 		
-		while (i >=0 && j < m && i < n && j >= 0) {
+		while (i >= 0 && j < m && i < n && j >= 0) {
 			if (x == mat[i][j]) {
 				return true;
 			} else if (x < mat[i][j]) {
@@ -20,6 +20,6 @@ public class Finder {
 	}
 	
 	public static void main(String[] args) {
-	
+		
 	}
 }
