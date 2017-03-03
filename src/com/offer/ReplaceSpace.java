@@ -4,8 +4,8 @@ package com.offer;
 import java.util.Arrays;
 
 public class ReplaceSpace {
-	public String replaceSpace(String str) {
-		char[] s = str.toCharArray(); //转换成字符数组
+	public String replaceSpace(StringBuffer str) {
+		char[] s = str.toString().toCharArray(); //转换成字符数组
 			
 		int space = 0; //空格个数
 		
