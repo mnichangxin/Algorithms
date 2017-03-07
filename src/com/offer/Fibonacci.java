@@ -1,4 +1,4 @@
-/* 斐波那契数列，非递归方式  */
+/* 鏂愭尝閭ｅ鏁板垪锛岄潪閫掑綊鏂瑰紡 */
 package com.offer;
 
 public class Fibonacci {
@@ -24,6 +24,5 @@ public class Fibonacci {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(new Fibonacci().fibonacci(10));
 	}
 }

@@ -45,10 +45,5 @@ public class MinNumberRotatedArray {
 	}
 	
 	public static void main(String[] args) {
-		MinNumberRotatedArray m = new MinNumberRotatedArray();
-		
-		int[] A = new int[]{3,4,5,1,2};
-		
-		System.out.println(m.min(A));
 	}
 }
