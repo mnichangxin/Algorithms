@@ -1,3 +1,3 @@
-# nowcoder
+# Algorithms
 
-Algorithm of nowcoder.
+It's a repository of algorithms which I have practiced or learnd.
