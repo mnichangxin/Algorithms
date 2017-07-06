@@ -9,12 +9,19 @@ class AMWGraph {
 	private ArrayList vertexList; // 存储点的链表
 	private int[][] edges; // 邻接矩阵，用于存储边
 	private int numOfEdges; // 边的数目
+	private boolean[] isVisited;
 	
 	// 初始化矩阵
 	public AMWGraph(int n) {
 		edges = new int[n][n];
 		vertexList = new ArrayList(n);
 		numOfEdges = 0;
+		
+		isVisited = new boolean[n];
+		
+		for (int i = 0; i < n; i++) {
+			this.isVisited[i] = false;
+		}
 	}
 	
 	// 得到结点的个数
@@ -74,12 +81,39 @@ class AMWGraph {
 		
 		return -1;
 	}
+
+	// 私有函数，深度优先遍历
+	private void depthFirstSearch(boolean[] isVisited, int i) {
+		System.out.print(this.getValueByIndex(i) + " ");
+		
+		isVisited[i] = true; // 置该结点为访问
+		
+		int w = this.getFirstNeighbor(i);
+		
+		while (w != -1) {
+			if (!isVisited[w]) {
+				this.depthFirstSearch(isVisited, w);
+			}
+			
+			w = this.getNextNeigbor(i, w);
+		}
+	}
+	
+	// 对外公开函数，深度优先遍历
+	public void depthFirstSearch() {
+		for (int i = 0; i < this.getNumOfVertex(); i++) {
+			// 对于非连通图，并不是通过一个节点就一定可以遍历所有结点的
+			if (!isVisited[i]) {
+				this.depthFirstSearch(isVisited, i);
+			}
+		}
+	}
 }
 
 public class DFS {
 	public static void main(String[] args) {
-		int n = 4, e = 4;
-		String[] labels = {"V1", "V1", "V3", "V4"};
+		int n = 8, e = 8;
+		String[] labels = {"1", "2", "3", "4", "5", "6", "7", "8"};
 		
 		AMWGraph graph = new AMWGraph(n);
 		
@@ -88,18 +122,28 @@ public class DFS {
 			graph.insertVertex(label);
 		}
 		
-		// 插入四条边
-		graph.insertEdge(0, 1, 2);
-		graph.insertEdge(0, 2, 5);
-		graph.insertEdge(2, 3, 8);
-		graph.insertEdge(3, 0, 7);
+		// 插入九条边
+		graph.insertEdge(0, 1, 1);
+        graph.insertEdge(0, 2, 1);
+        graph.insertEdge(1, 3, 1);
+        graph.insertEdge(1, 4, 1);
+        graph.insertEdge(3, 7, 1);
+        graph.insertEdge(4, 7, 1);
+        graph.insertEdge(2, 5, 1);
+        graph.insertEdge(2, 6, 1);
+        graph.insertEdge(5, 6, 1);
+        graph.insertEdge(1, 0, 1);
+        graph.insertEdge(2, 0, 1);
+        graph.insertEdge(3, 1, 1);
+        graph.insertEdge(4, 1, 1);
+        graph.insertEdge(7, 3, 1);
+        graph.insertEdge(7, 4, 1);
+        graph.insertEdge(6, 2, 1);
+        graph.insertEdge(5, 2, 1);
+        graph.insertEdge(6, 5, 1);
 		
-		System.out.println("结点的个数是：" + graph.getNumOfVertex());
-		System.out.println("边的个数是：" + graph.getNumOfEdges());
-	
-		graph.deleteEdge(0, 1);
-		
-		System.out.println("结点的个数是：" + graph.getNumOfVertex());
-		System.out.println("边的个数是：" + graph.getNumOfEdges());
+		System.out.println("深度优先搜索序列为：");
+		graph.depthFirstSearch();
+		System.out.println();
 	}
 }
