@@ -1,7 +1,10 @@
-/* DFS深度优先遍历 */
+/* DFS 深度优先遍历 ，BFS 广度优先遍历  */
 package com.classic;
 
+
+import java.util.Queue;
 import java.util.Stack;
+import java.util.LinkedList;
 
 /* 邻接矩阵模型类 */
 class AMWGraph {
@@ -34,23 +37,23 @@ class AMWGraph {
 		this.arcs[i][j] = 1;
 	}
 	
-	public void traverse(int i) {
-		this.isVisited[i] = true;
+	// 深度优先遍历（递归）
+	public void dfsTvr(int i) {
+		isVisited[i] = true;
 		
-		System.out.print(this.vertices[i] + " ");
+		System.out.print(vertices[i] + " ");
 		
-		for (int j = 0; j < this.vexnum; j++) {
-			if (this.arcs[i][j] == 1 && this.isVisited[j] == false) {
-				traverse(j);
+		for (int j = 0; j < vexnum; j++) {
+			if (arcs[i][j] == 1 && isVisited[j] == false) {
+				dfsTvr(j);
 			}
 		}
 	}
 	
-	// 深度优先遍历（递归）
 	public void DFSTraverse() {
-		for (int i = 0; i < this.vexnum; i++) {
-			if (this.isVisited[i] == false) {
-				this.traverse(i);
+		for (int i = 0; i < vexnum; i++) {
+			if (isVisited[i] == false) {
+				dfsTvr(i);
 			}
 		}
 	}
@@ -81,52 +84,56 @@ class AMWGraph {
             }
         }
 	}
+	
+	// 广度优先遍历
+	public void BFS() {
+		Queue<Integer> q = new LinkedList<Integer>();
+		
+		for (int i = 0; i < vexnum; i++) {
+			if (isVisited[i] == false) {
+				q.offer(i); // 入队列
+				
+				while (!q.isEmpty()) {
+					int cur = q.poll(); // 出队列
+					
+					isVisited[cur] = true;
+					
+					System.out.print(vertices[cur] + " ");
+					
+					for (int j = 0; j < vexnum; j++) {
+						if (arcs[cur][j] == 1 && isVisited[j] == false) {
+							q.offer(j); // 入队列
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 /* 主类  */
-public class DFS {
+public class TraverseGraph {
 	public static void main(String[] args) {
-		AMWGraph g = new AMWGraph(9);
+		AMWGraph g = new AMWGraph(7);
 		
-        String[] vertices = {"A", "B", "C", "D", "E", "F", "G", "H", "I"};
+        String[] vertices = {"A", "B", "C", "D", "E", "F", "G"};
  
         g.setVertices(vertices);
 
         g.setArcs(0, 1);
-        g.setArcs(0, 5);
-        g.setArcs(1, 0);
-        g.setArcs(1, 2);
-        g.setArcs(1, 6);
-        g.setArcs(1, 8);
-        g.setArcs(2, 1);
-        g.setArcs(2, 3);
-        g.setArcs(2, 8);
-        g.setArcs(3, 2);
-        g.setArcs(3, 4);
-        g.setArcs(3, 6);
-        g.setArcs(3, 7);
-        g.setArcs(3, 8);
-        g.setArcs(4, 3);
-        g.setArcs(4, 5);
-        g.setArcs(4, 7);
-        g.setArcs(5, 0);
-        g.setArcs(5, 4);
-        g.setArcs(5, 6);
-        g.setArcs(6, 1);
-        g.setArcs(6, 3);
-        g.setArcs(6, 5);
-        g.setArcs(6, 7);
-        g.setArcs(7, 3);
-        g.setArcs(7, 4);
-        g.setArcs(7, 6);
-        g.setArcs(8, 1);
-        g.setArcs(8, 2);
-        g.setArcs(8, 3);
+        g.setArcs(0, 2);
+        g.setArcs(1, 3);
+        g.setArcs(1, 4);
+        g.setArcs(2, 5);
+        g.setArcs(2, 6);
 
 //        System.out.print("深度优先遍历（递归）：");
 //        g.DFSTraverse();
 //        System.out.println();
-        System.out.print("深度优先遍历（非递归）：");
-        g.DFS();
+//        System.out.print("深度优先遍历（非递归）：");
+//        g.DFS();
+        System.out.println();
+        System.out.print("广度优先遍历：");
+        g.BFS();
 	}
 }
