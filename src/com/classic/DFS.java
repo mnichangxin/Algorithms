@@ -1,7 +1,6 @@
 /* DFS深度优先遍历 */
 package com.classic;
 
-import java.util.ArrayList;
 import java.util.Stack;
 
 /* 邻接矩阵模型类 */
@@ -61,27 +60,24 @@ class AMWGraph {
 		Stack<Integer> s = new Stack<Integer>();
         
 		for (int i = 0; i < vexnum; i++) {
-            if (!this.isVisited[i]) {
-                //连通子图起始节点
-                s.add(i);
-                do{ 
-                    // 出栈
-                    int curr = s.pop();
-
-                    // 如果该节点还没有被遍历，则遍历该节点并将子节点入栈
-                    if(this.isVisited[curr]==false) {
-                        // 遍历并打印
-                        this.traverse(curr);
-                        this.isVisited[curr] = true;
-
-                        // 没遍历的子节点入栈
-                        for (int j = vexnum - 1; j >= 0; j--) {
-                            if (this.arcs[curr][j] == 1 && this.isVisited[j] == false) {
-                                s.add(j);
-                            }
-                        }
-                    }
-                } while(!s.isEmpty());
+            if (isVisited[i] == false) {
+                s.add(i); //连通子图起始节点
+              
+                while (!s.isEmpty()) {
+                	int cur = s.pop(); // 出栈
+                	
+                	if (isVisited[cur] == false) {
+                		isVisited[cur] = true;
+                    	
+                    	System.out.print(vertices[cur] + " ");
+                    	
+                    	for (int j = vexnum - 1; j >= 0; j--) {
+                    		if (arcs[cur][j] == 1 && isVisited[j] == false) {
+                    			s.add(j); // 入栈
+                    		}
+                    	}
+                	} 
+                }
             }
         }
 	}
@@ -127,7 +123,10 @@ public class DFS {
         g.setArcs(8, 2);
         g.setArcs(8, 3);
 
-        System.out.print("深度优先遍历（递归）：");
-        g.DFSTraverse();
+//        System.out.print("深度优先遍历（递归）：");
+//        g.DFSTraverse();
+//        System.out.println();
+        System.out.print("深度优先遍历（非递归）：");
+        g.DFS();
 	}
 }
