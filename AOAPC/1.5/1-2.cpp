@@ -1,7 +1,7 @@
 // 1-2 ÎÂ¶È
 #include <iostream>
 
-int main(int argc,char *argv[]) {
+int main() {
 	float f, c;
 	
 	scanf("%f", &f);
