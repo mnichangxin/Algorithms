@@ -1,4 +1,4 @@
-// 1-1 Æ½¾ùÊı 
+// 1-1 average
 #include <iostream>
 
 int main() {

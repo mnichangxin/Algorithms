@@ -1,4 +1,4 @@
-// 1-5 Дђел
+// 1-5 discount
 #include <iostream>
 
 int main() {

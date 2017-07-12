@@ -1,4 +1,4 @@
-// 1-6 Èý½ÇÐÎ
+// 1-6 triangle
 #include <iostream>
 #include <cmath>
 

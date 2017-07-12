@@ -1,4 +1,4 @@
-// 1-7 Äê·İ
+// 1-7 year
 #include <iostream>
 
 int main() {

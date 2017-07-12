@@ -1,4 +1,4 @@
-// 1-3 Á¬ÐøºÍ
+// 1-3 sum
 #include <iostream>
 
 int main() {

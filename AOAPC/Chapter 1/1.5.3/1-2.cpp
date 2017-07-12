@@ -1,4 +1,4 @@
-// 1-2 ÎÂ¶È
+// 1-2 temperature
 #include <iostream>
 
 int main() {

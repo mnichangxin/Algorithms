@@ -1,4 +1,4 @@
-// 1-4 ÕıÏÒºÍÓàÏÒ
+// 1-4 sin and cos
 #include <iostream>
 #include <cmath>
 
