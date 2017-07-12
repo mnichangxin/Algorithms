@@ -1,4 +1,4 @@
-// 2-2 subsequence
+// 2-4 subsequence
 #include <iostream>
 #include <cmath>
 

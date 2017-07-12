@@ -1,4 +1,4 @@
-// 2-2 triangle
+// 2-3 triangle
 #include <iostream>
 
 using namespace::std;
