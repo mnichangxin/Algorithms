@@ -16,14 +16,13 @@ int main() {
 		v.insert(s[i]);
 	}
 	
-	int n = v.size();
-	int sum = 1;
-	
-	for (int i = 1; i <= n; i++) {
-		sum *= i;
+	if (v.size() == 2) {
+		cout << 2;
+	} else if (v.size() == 1) {
+		cout << 1;
+	}else {
+		cout << 0;
 	}
-	
-	cout << sum;
-	
+
 	return 0;
 } 
