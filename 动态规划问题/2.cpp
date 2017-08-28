@@ -16,23 +16,24 @@ using namespace std;
 //}
 
 // 记忆化搜索
-int dp[100000];
+//int dp[100000];
 //int depfun(int i) {
 //	if (i <= 0) {
 //		return 0;
-//	} else if (i == 1 || i == 2) {
+//	} else if (i == 1) {
 //		return 1;
+//	} else if (i == 2) {
+//		return 2;
 //	}
 //	
-//	if (dp[i - 1] > 0) {
-//		return dp[i - 1];
+//	if (dp[i] > 0) {
+//		return dp[i];
 //	}
 //	
 //	return depfun(i - 1) + depfun(i - 2);
 //}
 
 // 动态规划 
-
 int countWays(int n) {
 	memset(dp, -1, sizeof(dp));
 	
