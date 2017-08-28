@@ -22,6 +22,8 @@ int getMin(vector<vector<int> > map, int n, int m) {
 	return pathMin(map, n, m);
 }
 
+// ¼ÇÒä»¯ËÑË÷ 
+
 int main() {
 	int n, m;
 	cin >> n >> m;
