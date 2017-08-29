@@ -16,7 +16,7 @@ using namespace std;
 //}
 
 // ¼ÇÒä»¯ËÑË÷
-//int dp[100000];
+int dp[100000];
 //int depfun(int i) {
 //	if (i <= 0) {
 //		return 0;
