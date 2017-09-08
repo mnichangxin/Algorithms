@@ -1,26 +1,33 @@
-#include <iostream>
+#include<iostream>
+#include <cmath>
 
 using namespace std;
 
-int main() {
-	int x, f, d, p;
-	cin >> x >> f >> d >> p;
+int lenStr(string s) {
+	int maxLen = 0;
+	int len = 1;
 	
-	int day = 0;
-	
-	while (d >= 0 && f >= 0) {
-		d = d - x;
-		f--;
-		
-		if (f < d / x) {
-			x -= p;
-			f++;
+	for (int i = 0; i < s.length() - 1; i++) {
+		if (s[i] != s[i + 1]) {
+			len++;
+			
+			if (i == s.length() - 2) {
+				maxLen = max(len, maxLen);
+			}
+		} else {
+			maxLen = max(len, maxLen);
+			len = 1;
 		}
-		
-		day++;
 	}
 	
-	cout << day;
+	return maxLen;
+}
+
+int main() {
+	string s;
+	cin >> s;
+	
+	cout << lenStr(s);
 	
 	return 0;
-} 
+}
