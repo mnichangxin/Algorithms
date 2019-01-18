@@ -8,6 +8,9 @@ def selectSort(arr):
                 temp = arr[i]
                 arr[i] = arr[j]
                 arr[j] = temp
+                '''OR
+                arr[i], arr[j] = arr[j], arr[i]
+                '''
     return arr
 
 for line in sys.stdin:
