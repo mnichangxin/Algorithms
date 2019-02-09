@@ -1,9 +1,9 @@
-/* ×îÓÅ±à¼­ÎÊÌâ */
+ï»¿/* æœ€ä¼˜ç¼–è¾‘é—®é¢˜ */
 #include <iostream>
 
 using namespace std;
 
-// ¶¯Ì¬¹æ»® 
+// åŠ¨æ€è§„åˆ’ 
 int findMinCost(string A, int n, string B, int m, int c0, int c1, int c2) {
     int dp[n + 1][m + 1];
     

@@ -1,4 +1,4 @@
-/* ÕÒÁãÇ®ÎÊÌâ */
+ï»¿/* æ‰¾é›¶é’±é—®é¢˜ */
 #include <iostream>
 #include <vector>
 #include <cstring>
@@ -7,7 +7,7 @@ using namespace std;
 
 int dp[60][1100];
 
-//±©Á¦ËÑË÷ 
+//æš´åŠ›æœç´¢ 
 //int recurcount(vector<int> penny, int begin, int n, int aim) {
 //	if (begin == n - 1) {
 //		if (aim % penny[begin] == 0) {
@@ -25,7 +25,7 @@ int dp[60][1100];
 //	return sum;
 //}
 
-// ¼ÇÒä»¯ËÑË÷
+// è®°å¿†åŒ–æœç´¢
 //int recurcount(vector<int> penny, int begin, int n, int aim) {
 //	if (begin == n - 1) {
 //		if (aim % penny[begin] == 0) {
@@ -47,7 +47,7 @@ int dp[60][1100];
 //	return sum;	
 //} 
 
-//  ¶¯Ì¬¹æ»®
+//  åŠ¨æ€è§„åˆ’
 int countWays(vector<int> penny, int n, int aim) {
 	memset(dp, 0, sizeof(dp));
 	

@@ -1,10 +1,10 @@
-#include <iostream>
+﻿#include <iostream>
 #include <vector>
 #include <cmath>
 
 using namespace std;
 
-// ��̬�滮 
+// 动态规划 
 int getLIS(vector<int> A, int n) {
 	int dp[n];
 	

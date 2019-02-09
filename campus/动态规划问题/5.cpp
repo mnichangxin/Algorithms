@@ -1,4 +1,4 @@
-/* LCS(×î³¤¹«¹²×ÓĞòÁĞ) */
+ï»¿/* LCS(æœ€é•¿å…¬å…±å­åºåˆ—) */
 #include <iostream>
 #include <cmath>
 #include <cstring>
@@ -7,7 +7,7 @@ using namespace std;
 
 int dp[300][300];
 
-//// ±©Á¦Çó½â 
+//// æš´åŠ›æ±‚è§£ 
 //int maxLCS(string A, int x, string B, int y) {
 //	if (x == -1 || y == -1) {
 //		return 0;
@@ -20,7 +20,7 @@ int dp[300][300];
 //	return 0;
 //}
 
-// ¼ÇÒä»¯ËÑË÷
+// è®°å¿†åŒ–æœç´¢
 //int maxLCS(string A, int x, string B, int y) {
 //	if (x == -1 || y == -1) {
 //		return 0;
@@ -37,7 +37,7 @@ int dp[300][300];
 //	return 0;
 //} 
 
-// ¶¯Ì¬¹æ»®
+// åŠ¨æ€è§„åˆ’
 int findLCS(string A, int n, string B, int m) {
 	memset(dp, -1, sizeof(dp));	
 	

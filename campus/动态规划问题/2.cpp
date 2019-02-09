@@ -1,10 +1,10 @@
-/* Ì¨½×ÎÊÌâ */
+ï»¿/* å°é˜¶é—®é¢˜ */
 #include <iostream>
 #include <cstring>
 
 using namespace std;
 
-// ±©Á¦ËÑË÷ 
+// æš´åŠ›æœç´¢ 
 //int depfun(int i) {
 //	if (i <= 0) {
 //		return 0;
@@ -15,7 +15,7 @@ using namespace std;
 //	return depfun(i - 1) + depfun(i - 2);
 //}
 
-// ¼ÇÒä»¯ËÑË÷
+// è®°å¿†åŒ–æœç´¢
 int dp[100000];
 //int depfun(int i) {
 //	if (i <= 0) {
@@ -33,7 +33,7 @@ int dp[100000];
 //	return depfun(i - 1) + depfun(i - 2);
 //}
 
-// ¶¯Ì¬¹æ»® 
+// åŠ¨æ€è§„åˆ’ 
 int countWays(int n) {
 	memset(dp, -1, sizeof(dp));
 	

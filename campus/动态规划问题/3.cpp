@@ -1,4 +1,4 @@
-/* ¾ØÕó×îĞ¡Â·¾¶ÎÊÌâ */
+ï»¿/* çŸ©é˜µæœ€å°è·¯å¾„é—®é¢˜ */
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -8,7 +8,7 @@ using namespace std;
 
 int dp[101][101];
 
-//// ±©Á¦ËÑË÷ 
+//// æš´åŠ›æœç´¢ 
 //int pathMin(vector<vector<int> > map, int x, int y) {
 //	if (x == 0 || y == 0) {
 //		return 0;
@@ -21,7 +21,7 @@ int dp[101][101];
 //	return map[x][y] + min(pathMin(map, x - 1, y), pathMin(map, x, y - 1));
 //}
 //
-//// ¼ÇÒä»¯ËÑË÷ 
+//// è®°å¿†åŒ–æœç´¢ 
 //int pathMin(vector<vector<int> > map, int x, int y) {
 //	if (x == 0 || y == 0) {
 //		return 0;
@@ -40,7 +40,7 @@ int dp[101][101];
 //	return  dp[x][y];
 //}
 
-// ¶¯Ì¬¹æ»®
+// åŠ¨æ€è§„åˆ’
 int getMin(vector<vector<int> > map, int n, int m) {	
 	dp[1][1] = map[1][1];
 	for (int i = 2; i <= n; i++) {

@@ -1,4 +1,4 @@
-/* 0-1±³°üÎÊÌâ */
+ï»¿/* 0-1 èƒŒåŒ…é—®é¢˜ */
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -8,20 +8,20 @@ using namespace std;
 
 int dp[1000][1000];
 
-// ±©Á¦Çó½â 
+// æš´åŠ›æ±‚è§£ 
 //int find(vector<int> w, vector<int> v, int index, int cap) {
-//	if (index < 0 || cap <= 0) {
+//	if (index < 0 || cap <= 0) {		
 //		return 0;
 //	} else if (w[index] > cap) {
 //		return find(w, v, index - 1, cap);
 //	} else if (index == 0) {
 //		return w[0];
-//	}	
+//	}
 //	
 //	return max(find(w, v, index - 1, cap - w[index]) + v[index], find(w, v, index - 1, cap));
 //}
 
-// ¼ÇÒä»¯ËÑË÷
+// è®°å¿†åŒ–æœç´¢
 //int find(vector<int> w, vector<int> v, int index, int cap) {
 //	if (index < 0 || cap <= 0) {
 //		return 0;
@@ -39,7 +39,7 @@ int dp[1000][1000];
 //	return dp[index];
 //}
 
-// ¶¯Ì¬¹æ»®
+// åŠ¨æ€è§„åˆ’
 int maxValue(vector<int> w, vector<int> v, int n, int cap) {
 	memset(dp, -1, sizeof(dp));
 	
@@ -55,10 +55,10 @@ int maxValue(vector<int> w, vector<int> v, int n, int cap) {
 				dp[i][j] = dp[i - 1][j];
 			}
 		}
-	}	
+	}
 	
 	return dp[n][cap];
-} 
+}
 
 //int maxValue(vector<int> w, vector<int> v, int n, int cap) {
 //	memset(dp, -1, sizeof(dp));
