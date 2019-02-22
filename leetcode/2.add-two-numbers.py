@@ -17,10 +17,10 @@ class Solution:
         q = l2
         cur = dummyHead
         carry = 0
-        while p is not None and q is not None:
+        while p is not None or q is not None:
             x = p.val if p is not None else 0
             y = q.val if q is not None else 0
-            sum = (x + y + carry)
+            sum = x + y + carry
             carry = sum // 10
             cur.next = ListNode(sum % 10)
             cur = cur.next
