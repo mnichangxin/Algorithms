@@ -5,28 +5,17 @@
 #         self.left = None
 #         self.right = None
 
-# [-10, -3, 0, 5, 9]
-
-# [-10, -3]
-# 0
-# [5, 9]
-
-# [-10]
-# -3
-
-# [5]
-# 9
-
-import math
-
 
 class Solution:
-    def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
+    def recursiveArrayToBST(self, nums: List[int]) -> TreeNode:
+        if not nums:
+            return
         n = len(nums)
-        if n == 0:
-            return []
-        mid = int(math.ceil(n // 2))
+        mid = n // 2
         t = TreeNode(nums[mid])
-        t.left = self.sortedArrayToBST(nums[0:mid])
-        t.right = self.sortedArrayToBST(nums[mid + 1:])
+        t.left = self.recursiveArrayToBST(nums[:mid])
+        t.right = self.recursiveArrayToBST(nums[mid + 1:])
         return t
+
+    def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
+        return self.recursiveArrayToBST(nums)

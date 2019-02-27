@@ -7,16 +7,16 @@
 
 
 class Solution:
-    def recursiveTreeDepth(self, t: TreeNode, leftDepth: int, rightDepth: int) -> bool:
-        if t.left is not None:
-            leftDepth += 1
-            self.recursiveTreeDepth(t.left, leftDepth, rightDepth)
-        if t.right is not None:
-            rightDepth += 1
-            self.recursiveTreeDepth(t.right, leftDepth, rightDepth)
-        return abs(leftDepth - rightDepth) <= 1
+    def recursiveTreeDepth(self, t: TreeNode) -> bool:
+        if t is None:
+            return 0
+        leftDepth = self.recursiveTreeDepth(t.left)
+        rightDepth = self.recursiveTreeDepth(t.right)
+        if leftDepth == -1 or rightDepth == -1:
+            return -1
+        if abs(leftDepth - rightDepth) > 1:
+            return -1
+        return max(leftDepth, rightDepth) + 1
 
     def isBalanced(self, root: TreeNode) -> bool:
-        if root is None:
-            return False
-        return self.recursiveTreeDepth(root, 0, 0)
+        return self.recursiveTreeDepth(root) != -1
